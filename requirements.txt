@@ -1,0 +1,13 @@
+pandas
+numpy
+scikit-learn
+beautifulsoup4
+requests
+lxml
+tqdm
+nltk
+matplotlib
+seaborn
+PyYAML
+loguru
+xgboost
