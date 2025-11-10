@@ -1,6 +1,5 @@
 ### to build the application as package so it can be used easily for deployment etc
 from typing import List
-
 from setuptools import setup, find_packages
 def get_requirements(file_path:str)->List[str]:
     '''

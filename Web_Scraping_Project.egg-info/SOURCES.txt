@@ -1,0 +1,11 @@
+README.md
+setup.py
+Web_Scraping_Project.egg-info/PKG-INFO
+Web_Scraping_Project.egg-info/SOURCES.txt
+Web_Scraping_Project.egg-info/dependency_links.txt
+Web_Scraping_Project.egg-info/requires.txt
+Web_Scraping_Project.egg-info/top_level.txt
+src/__init__.py
+src/exception.py
+src/logger.py
+src/utils.py

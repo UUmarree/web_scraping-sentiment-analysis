@@ -11,4 +11,3 @@ seaborn
 PyYAML
 loguru
 xgboost
--e .
