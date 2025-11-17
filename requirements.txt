@@ -11,4 +11,6 @@ seaborn
 PyYAML
 loguru
 xgboost
+psycopg2-binary
+sqlalchemy
 -e .
