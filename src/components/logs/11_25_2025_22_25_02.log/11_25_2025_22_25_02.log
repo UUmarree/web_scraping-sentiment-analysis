@@ -1,0 +1,4 @@
+[ 2025-11-25 22:25:03,265 ] 21 root - INFO - Starting data ingestion...
+[ 2025-11-25 22:25:03,319 ] 50 root - INFO - Fetched 5730 rows from Postgres
+[ 2025-11-25 22:25:03,382 ] 57 root - INFO - Saved raw data to CSV
+[ 2025-11-25 22:25:03,446 ] 67 root - INFO - Saved train.csv and test.csv successfully
