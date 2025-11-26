@@ -1,0 +1,4 @@
+[ 2025-11-26 17:55:00,808 ] 107 root - INFO - Starting data transformation...
+[ 2025-11-26 17:55:00,860 ] 115 root - INFO - Read raw data from artifacts\raw_data.csv with shape (5730, 4)
+[ 2025-11-26 17:55:01,432 ] 126 root - INFO - Data after cleaning has shape (4567, 4)
+[ 2025-11-26 17:55:01,477 ] 131 root - INFO - Saved transformed data to C:\Users\muham\Desktop\Web Scraping + Sentiment Analysis\artifacts\transformed_data.csv
