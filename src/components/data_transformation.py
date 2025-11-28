@@ -1,4 +1,6 @@
+import src.logger
 from src.logger import logging
+logging.info("Logger test: data_transformation.py script started")
 import sys
 import os
 import re
@@ -198,4 +200,7 @@ class DataTransformation:
             raise CustomException(e, sys)
         return self.transformation_config.transformed_data_path
 
-    
+if __name__ == '__main__':
+    DataTransformation().initiate_data_transformation()
+
+

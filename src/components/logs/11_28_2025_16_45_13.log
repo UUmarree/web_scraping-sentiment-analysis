@@ -1,0 +1,9 @@
+[ 2025-11-28 16:45:13,274 ] 3 root - INFO - Logger test: data_transformation.py script started
+[ 2025-11-28 16:45:14,852 ] 151 root - INFO - Starting data transformation...
+[ 2025-11-28 16:45:14,923 ] 159 root - INFO - Read raw data from C:\Users\muham\Desktop\Web Scraping + Sentiment Analysis\src\components\artifacts\raw_data.csv with shape (5730, 4)
+[ 2025-11-28 16:45:15,469 ] 170 root - INFO - Data after cleaning has shape (4567, 4)
+[ 2025-11-28 16:45:15,469 ] 174 root - INFO - Performing VADER sentiment analysis...
+[ 2025-11-28 16:45:31,925 ] 181 root - INFO - Sentiment analysis complete. Added columns: sentiment_compound, sentiment_pos, sentiment_neu, sentiment_neg, sentiment_label
+[ 2025-11-28 16:45:31,976 ] 186 root - INFO - Saved transformed data to C:\Users\muham\Desktop\Web Scraping + Sentiment Analysis\artifacts\transformed_data.csv
+[ 2025-11-28 16:45:32,030 ] 196 root - INFO - Saved training data to C:\Users\muham\Desktop\Web Scraping + Sentiment Analysis\artifacts\transformed_train_data.csv with shape (3653, 9)
+[ 2025-11-28 16:45:32,030 ] 197 root - INFO - Saved testing data to C:\Users\muham\Desktop\Web Scraping + Sentiment Analysis\artifacts\transformed_test_data.csv with shape (914, 9)
