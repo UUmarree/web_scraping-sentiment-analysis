@@ -10,6 +10,9 @@ from dataclasses import dataclass
 from nltk.sentiment import SentimentIntensityAnalyzer
 from src.exception import CustomException
 
+# Base directory: repository root (two levels up from this file)
+BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
+
 # Ensure VADER lexicon is available
 import nltk
 try:
@@ -18,9 +21,9 @@ except LookupError:
     nltk.download('vader_lexicon')
 @dataclass
 class DataTransformationConfig:
-    transformed_train_path: str = os.path.join('artifacts', 'transformed_train_data.csv')
-    transformed_test_path: str = os.path.join('artifacts', 'transformed_test_data.csv')
-    transformed_data_path: str = os.path.join('artifacts', 'transformed_data.csv')
+    transformed_train_path: str = os.path.join(BASE_DIR, 'artifacts', 'transformed_train_data.csv')
+    transformed_test_path: str = os.path.join(BASE_DIR, 'artifacts', 'transformed_test_data.csv')
+    transformed_data_path: str = os.path.join(BASE_DIR, 'artifacts', 'transformed_data.csv')
     test_size: float = 0.2
 
 
@@ -149,7 +152,7 @@ class DataTransformation:
             # -------------------------------
             # 1. READ RAW DATA
             # -------------------------------
-            raw_data_path = os.path.join('artifacts', 'raw_data.csv')
+            raw_data_path = os.path.join(BASE_DIR, 'src', 'components', 'artifacts', 'raw_data.csv')
             df = pd.read_csv(raw_data_path)
             logging.info(f"Read raw data from {raw_data_path} with shape {df.shape}")
             # -------------------------------
@@ -179,8 +182,17 @@ class DataTransformation:
             os.makedirs(os.path.dirname(self.transformation_config.transformed_data_path), exist_ok=True)
             df.to_csv(self.transformation_config.transformed_data_path, index=False)
             logging.info(f"Saved transformed data to {self.transformation_config.transformed_data_path}")
+
             # -------------------------------
-            
+
+            # 4. SPLIT INTO TRAIN AND TEST SETS
+            train_df, test_df = train_test_split(
+                df, test_size=self.transformation_config.test_size, random_state=42
+            )
+            train_df.to_csv(self.transformation_config.transformed_train_path, index=False)
+            test_df.to_csv(self.transformation_config.transformed_test_path, index=False)
+            logging.info(f"Saved training data to {self.transformation_config.transformed_train_path} with shape {train_df.shape}")
+            logging.info(f"Saved testing data to {self.transformation_config.transformed_test_path} with shape {test_df.shape}")
         except Exception as e:
             logging.error("Error during data transformation")
             raise CustomException(e, sys)
