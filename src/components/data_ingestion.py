@@ -25,10 +25,10 @@ class DataIngestion:
             # 1. CONNECT TO POSTGRES
             # -------------------------------
             conn = psycopg2.connect(
-                host="localhost",
-                database="Review_Data",
-                user="postgres",
-                password="Hideonbush12!"  # Replace with your password
+                host=os.getenv("POSTGRES_HOST", "localhost"),
+                database=os.getenv("POSTGRES_DB", "Review_Data"),
+                user=os.getenv("POSTGRES_USER", "postgres"),
+                password=os.getenv("POSTGRES_PASSWORD", ""),
             )
             cursor = conn.cursor()
 

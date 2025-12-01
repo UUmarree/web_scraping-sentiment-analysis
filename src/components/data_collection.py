@@ -1,3 +1,4 @@
+import os
 import requests
 import psycopg2
 import json
@@ -99,10 +100,10 @@ class DataCollector:
 # ---------------- Main Script ----------------
 
 db_config = {
-    "host": "localhost",
-    "database": "Review_Data",
-    "user": "postgres",
-    "password": "Hideonbush12!"  # Replace with your password
+    "host": os.getenv("POSTGRES_HOST", "localhost"),
+    "database": os.getenv("POSTGRES_DB", "Review_Data"),
+    "user": os.getenv("POSTGRES_USER", "postgres"),
+    "password": os.getenv("POSTGRES_PASSWORD", ""),
 }
 
 headers = {

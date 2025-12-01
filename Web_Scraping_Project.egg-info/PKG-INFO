@@ -7,6 +7,7 @@ Requires-Dist: pandas
 Requires-Dist: numpy
 Requires-Dist: scikit-learn
 Requires-Dist: beautifulsoup4
+Requires-Dist: streamlit
 Requires-Dist: requests
 Requires-Dist: lxml
 Requires-Dist: tqdm
@@ -16,6 +17,8 @@ Requires-Dist: seaborn
 Requires-Dist: PyYAML
 Requires-Dist: loguru
 Requires-Dist: xgboost
+Requires-Dist: psycopg2-binary
+Requires-Dist: sqlalchemy
 Dynamic: author
 Dynamic: author-email
 Dynamic: requires-dist
